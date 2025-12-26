@@ -1,0 +1,64 @@
+
+
+
+app.ts: 
+    - title: é o nome da propriedade (uma variável da classe). Esse nome é o que você vai usar no HTML ou em outros métodos da classe.
+    - protected: modificador de acesso da programação orientada a objetos. Apenas dentro da classe e de classes filhas.
+    - readonly: "somente leitura". Você não pode substituir title para outras coisas depois (ex: this.title = ..., daria erro). Mas pode alterar o valor interno do signal.
+    - signal: uma variável reativa, ele guarda um valor e avisa o Angular quando esse valor muda, para a tela ser atualziada automaticamente. Exemplo:
+        titulo = 'Dev Landing Page';
+
+        <h1>{{ titulo }}</h1>
+
+          Se no código você fizer this.titulo = 'Outro título';, Angular precisa usar o mecanismo de detecção de mudanças dele para perceber e atualizar tudo.
+
+        titulo = signal('Dev Landing Page');
+
+        <h1>{{ titulo() }}</h1>
+
+        Agora titulo não é a string em si, mas um signal. Como o signal é reativo, quem estiver usando titulo() na view é notificado e a tela se atualiza de forma mais direta e otimizada
+
+    - signal('dev-landing-page"): signal (...) é uma função que cria um sinal. Ao invés de fazer "title = 'dev-landing-page", você está fazendo:
+      "Crie um objeto sinal que guarda esse texto e é observável pelo Angular.”
+      O valor inicial do sinal é 'dev-landing=page'
+
+        Para ler o valor, você chama como função: title().
+        Para alterar, você usa métodos como title.set('novo-valor').
+  
+
+      “Signal é uma forma moderna do Angular dizer: ‘quando esse dado mudar, atualize quem depende dele’ – sem eu precisar ficar controlando tudo na mão.”
+  
+  ****************************
+    Como usar title no HTML?
+
+    No template app.html, se quisesse mostrar o valor desse signal, você faria:
+
+      <h1>{{ title() }}</h1>
+
+    - uso de (): como title é um signal, para pegar o valor, você chama como se fosse uma função; Se fosse simples, seria só {{ title }}
+
+
+
+    Imagina que você tivesse um botão que troca o título:
+        changeTitle() {
+          this.title.set('Meu Portfólio em Angular');
+        }
+
+        <h1>{{ title() }}</h1>
+          <button (click)="changeTitle()">Mudar título</button> 
+
+        - (click)="changeTitle()" → quando o usuário clicar no botão, Angular chama o método changeTitle() da classe.
+        - this.title.set('...') → muda o valor do signal.
+        Como é um signal, Angular percebe a mudança e atualiza o {{ title() }} automaticamente.
+    
+    ********************************
+    Forma semelhante de fazer botão:
+
+    toggleDescription(): void {
+      const current = this.showFullDescription();
+      const next = !current;
+      this.showFullDescription.set(next);
+    }
+    
+    ************************
+    npx ng cache clean
