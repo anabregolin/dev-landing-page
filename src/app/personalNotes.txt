@@ -28,7 +28,7 @@ app.ts:
 
       “Signal é uma forma moderna do Angular dizer: ‘quando esse dado mudar, atualize quem depende dele’ – sem eu precisar ficar controlando tudo na mão.”
   
-  ****************************
+  ****************************************************************************************************************************
     Como usar title no HTML?
 
     No template app.html, se quisesse mostrar o valor desse signal, você faria:
@@ -51,7 +51,7 @@ app.ts:
         - this.title.set('...') → muda o valor do signal.
         Como é um signal, Angular percebe a mudança e atualiza o {{ title() }} automaticamente.
     
-    ********************************
+    ********************************************************************************************************************************
     Forma semelhante de fazer botão:
 
     toggleDescription(): void {
@@ -60,5 +60,9 @@ app.ts:
       this.showFullDescription.set(next);
     }
     
-    ************************
+    ************************************************************************************************************************
     npx ng cache clean
+
+
+
+    ********************************************************************************************************************************

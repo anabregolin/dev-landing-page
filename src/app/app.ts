@@ -8,6 +8,7 @@ import { NgFor } from '@angular/common';
   templateUrl: './app.html', //qual arquivo de template HTML esse componente usa.
   styleUrl: './app.css' //qual arquivo CSS contém os estilos específicos desse componente.
 })
+
 export class App {
   /*
     Essa classe é a parte "lógica" do componente, aqui coloca-se dados e funções que o 

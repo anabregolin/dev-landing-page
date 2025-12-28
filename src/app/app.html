@@ -20,7 +20,7 @@
     </p>
 
     <button (click)="toggleDescription()"> <!-- (click) é um event binding: você está dizendo “quando acontecer o evento de clique, chame essa função do componente” -->
-      {{ showFullDescription() ? 'Clique para ver versão resumida' : 'Clique para ver versão completa '}}
+      {{ showFullDescription() ? 'Clique para ver versão resumida' : 'Clique para ver versão completa'}}
     </button>
 
   </section>
@@ -35,7 +35,6 @@
       <article *ngFor="let project of projects()"> <!-- npx ng cache clean, importar em app.ts -->
         <h3>{{ project.name }}</h3>
         <p>{{ project.description }} </p>
-
         <p>
           <strong>Technologias:</strong>
           {{ project.techs.join(', ')}}
