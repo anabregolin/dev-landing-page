@@ -1,0 +1,17 @@
+<section id="projetos">
+    <h2> Projetos</h2>
+    <p>
+        Aqui vou listar alguns projetos legais quando eu souber um pouco mais.
+    </p>
+
+    <div>
+        <article *ngFor="let project of projects()"> <!-- npx ng cache clean, importar em app.ts -->
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }} </p>
+            <p>
+                <strong>Technologias:</strong>
+                {{ project.techs.join(', ')}}
+            </p>
+        </article>
+    </div>
+</section>

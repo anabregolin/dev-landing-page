@@ -1,0 +1,78 @@
+:host {
+    display: block;
+}
+
+:host section {
+    margin-top: 2.5rem;
+}
+
+:host section h2 {
+    font-size: 1.4rem;
+}
+
+
+:host section p {
+    line-height: 1.6;
+    font-size: 0.98rem;
+}
+
+:host div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+:host article {
+  background-color: #202a3f;
+  border-radius: 0.2rem;
+  padding: 1.25rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border: 1px solid #1f2937;
+}
+
+:host h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+:host strong {
+  font-weight: 600;
+}
+
+
+/*
+
+Antes: #projetos funcionava porque estava no app.html (mesmo componente).
+
+Agora: o HTML está em projects.html, então #projetos não existe mais nesse escopo.
+
+:host seleciona o elemento raiz do componente (<app-projects>), e então :host div, :host article etc. encontram os elementos dentro dele.
+
+
+
++++
+
+#projetos div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* coloca em colunas. Valore stornam a seção responsíva. Em telas pequenas fica 1, em amiores 2 ou 3. Auto-fit é para criar colunas quando couberem 
+    gap: 1.5rem; /* espaçamento entre 
+    margin-top: 1.5rem;
+}
+
+#projetos article {
+    background-color: #202a3f;
+    border-radius: 0.2rem;
+    padding: 1.25rem; /* centraliza texto dentro do box do grid definido em #projetos div
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); /* shadow em baixo, fica massa 
+    border: 1px solid #1f2937;
+}
+
+#projetos h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#projetos strong {
+    font-weight: 600;
+}*/

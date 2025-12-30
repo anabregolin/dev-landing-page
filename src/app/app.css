@@ -20,36 +20,6 @@ main { /* Layour principal da main em app.html*/
     padding: 2rem 1rem 4rem; /* espaço interno (topo, laterais, rodapé). */ 
 }
 
-header {
-    display: flex; /* Ativa flexbox, um modelo de layout para alinhar elementos em linha. Os filhos de header (h1 e nav) ficam lado a lado */
-    justify-content: space-between; /* Espalha os elementos: título à esquerda, menu à direita */
-    align-items: center; /* Alinha verticalmente ao centro */
-    padding: 1.5rem 1rem; /*espaço interno do header */
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-header h1 {
-    font-size: 1.5rem; /* se eu inspecionar a página, da para notar que font-size está riscado: isso significa que outra regra do CSS está com prioridade, e esse meu font-size não funciona OU fiz algo de errado kkk */
-    font-weight: 700;
-    /*color: yellow;
-    text-transform: uppercase;
-    */
-}
-
-nav a {
-    margin-left: 1rem; /* Separa os valores do menu */
-    text-decoration: none; /* Tira o traçado do link*/
-    color: #e5e7eb;
-    font-size: 0.95rem;
-
-    /* não precisa declarar cursor:pointer, isso é automático */
-}
-
-nav a:hover {
-    color: #38bdf8; /* Fica dessa cor quando coloco o mouse em cima do texto */
-}
-
 section {
     margin-top: 2.5rem;
 }
@@ -80,27 +50,3 @@ button:hover {
 }
 
 /* Agora, vamos transformar cada <article> em um "card" */
-
-#projetos div {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* coloca em colunas. Valore stornam a seção responsíva. Em telas pequenas fica 1, em amiores 2 ou 3. Auto-fit é para criar colunas quando couberem */
-    gap: 1.5rem; /* espaçamento entre */
-    margin-top: 1.5rem;
-}
-
-#projetos article {
-    background-color: #202a3f;
-    border-radius: 0.2rem;
-    padding: 1.25rem; /* centraliza texto dentro do box do grid definido em #projetos div*/
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); /* shadow em baixo, fica massa */
-    border: 1px solid #1f2937;
-}
-
-#projetos h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-#projetos strong {
-    font-weight: 600;
-}
