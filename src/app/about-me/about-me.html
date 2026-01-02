@@ -1,0 +1,16 @@
+<section id="sobre">
+    <!-- Bloco de conteúdo relacionado (uma seção). O id permite que <a href="sobre"> saiba para onde rolar-->
+    <h2>Sobre mim</h2>
+    <p>
+        {{ showFullDescription() ? fullDescription() : shortDescription() }}
+    <!-- Expressão ternária condição ? A : B 
+    Se showFullDescription() for true, mostra fullDescription().
+    Se for false, mostra shortDescription() -->
+    </p>
+
+    <button (click)="toggleDescription()">
+        <!-- (click) é um event binding: você está dizendo “quando acontecer o evento de clique, chame essa função do componente” -->
+        {{ showFullDescription() ? 'Clique para ver versão resumida' : 'Clique para ver versão completa'}}
+    </button>
+
+</section>

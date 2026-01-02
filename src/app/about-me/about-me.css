@@ -1,0 +1,19 @@
+section p {
+    line-height: 1.6;
+    font-size: 0.98rem;
+}
+
+button {
+    margin-top: 1rem; /* afasta do texto */
+    padding: 0.5rem 1rem; /* tamanho da caixa do botão*/
+    border-radius: 3px;
+    border: none; /* tirar linha de borda feia */
+    background-color: #bfddea;
+    color: #0f172a;
+    font-weight: 600; /* em system-ui, spo existe 400 (normal) e 700 (bold), por isos não faz diferença de valores (é normalizado) */
+    cursor: pointer; /* quando colocar o cursos por cima, vira mãozinha */
+}
+
+button:hover {
+    background-color: #85d6fc;
+}
